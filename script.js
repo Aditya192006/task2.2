@@ -4,15 +4,12 @@ const pauseBtn = document.getElementById('pause-btn');
 const resetBtn = document.getElementById('reset-btn');
 const lapBtn = document.getElementById('lap-btn');
 const lapsContainer = document.getElementById('laps');
-
-/* Created By Yash kumar Banjare...   */
 let startTime = 0;
 let elapsedTime = 0; // in ms
 let timerInterval;
 let running = false;
 let lapCount = 0;
 
-// Format time to HH:MM:SS.mmm
 function formatTime(time) {
   const ms = time % 1000;
   const totalSeconds = Math.floor(time / 1000);
@@ -20,7 +17,6 @@ function formatTime(time) {
   const totalMinutes = Math.floor(totalSeconds / 60);
   const minutes = totalMinutes % 60;
   const hours = Math.floor(totalMinutes / 60);
-/* Created By Yash kumar Banjare...   */
   return (
     String(hours).padStart(2, '0') + ':' +
     String(minutes).padStart(2, '0') + ':' +
@@ -44,7 +40,6 @@ function start() {
   resetBtn.disabled = false;
   lapBtn.disabled = false;
 }
-/* Created By Yash kumar Banjare...   */
 function pause() {
   if (!running) return;
   running = false;
@@ -67,7 +62,6 @@ function reset() {
   resetBtn.disabled = true;
   lapBtn.disabled = true;
 }
-/* Created By Yash kumar Banjare...   */
 function recordLap() {
   if (!running) return;
   lapCount++;
@@ -82,5 +76,3 @@ startBtn.addEventListener('click', start);
 pauseBtn.addEventListener('click', pause);
 resetBtn.addEventListener('click', reset);
 lapBtn.addEventListener('click', recordLap);
-
-/* Created By Yash kumar Banjare...   */
